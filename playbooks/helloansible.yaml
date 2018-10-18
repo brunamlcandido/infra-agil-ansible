@@ -1,0 +1,8 @@
+- name: Minha primeira Playbook
+  hosts: all
+  tasks:
+    - name: Verificando memoria
+      command: free -h
+      register: memory
+    - name: Exibindo
+      debug: msg="{{ memory.stdout }}"
